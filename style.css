@@ -1,0 +1,100 @@
+:root{
+    --main:#0F0F0F;
+    --sec: #161A1D;
+    --red: #ff0800;
+    --dred: #660708;
+    --purple: #6e4b9a;
+    --pink: #ee005f;
+    --dpink: #b62a8f;
+
+}
+@keyframes background-pan {
+    from {
+      background-position: 0% center;
+    }
+    
+    to {
+      background-position: -200% center;
+    }
+  }
+  @keyframes scale {
+    from, to {
+      transform: scale(0);
+    }
+    
+    50% {
+      transform: scale(1);
+    }
+  }
+  
+  @keyframes rotate {
+    from {
+      transform: rotate(0deg);
+    }
+    
+    to {
+      transform: rotate(180deg);
+    }
+  }
+
+body{
+    margin: 0;
+}
+header{
+    background: rgba(11, 9, 10, 0.5);
+    width: 15%;
+    height: 100vh;
+    position: fixed;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+  }
+  ::-webkit-scrollbar-track {
+    background-color: var(--main);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #969696; 
+    border-radius: 10px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #666666; 
+  }
+
+.section{
+    width: 100%;
+    height: 100vh;
+}
+.even{
+    background: var(--main);
+}
+
+.odd{
+    background: var(--sec);
+}
+
+h1{
+    margin: 0;
+    padding: 15% 0 0 25%;
+    color: #fff;
+    font-size: 1000%;
+    font-family: "ccbiffbamboom", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.fancy{
+   animation: background-pan 5s linear infinite;
+    background: linear-gradient(
+    to right,
+    var(--purple),
+    var(--red),
+    var(--pink),
+    var(--dpink),
+    var(--purple)
+   );
+   background-size: 200%;
+   background-clip: text;
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent; 
+   white-space: nowrap;
+}
