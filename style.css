@@ -1,116 +1,110 @@
-:root{
-    --main:#0F0F0F;
-    --sec: #161A1D;
-    --red: #ff0800;
-    --purple: #6e4b9a;
-
+:root {
+  --main: #0F0F0F;
+  --sec: #161A1D;
+  --red: #ff0800;
+  --purple: #6e4b9a;
 }
+/*/////////////////////////////////////////*/
 @keyframes background-pan {
-    from {
-      background-position: 0% center;
-    }
-    
-    to {
-      background-position: -200% center;
-    }
+  from {
+    background-position: 0% center;
   }
-  @keyframes scale {
-    from, to {
-      transform: scale(0);
-    }
-    
-    50% {
-      transform: scale(1);
-    }
+  to {
+    background-position: -200% center;
   }
-  
-  @keyframes rotate {
-    from {
-      transform: rotate(0deg);
-    }
-    
-    to {
-      transform: rotate(180deg);
-    }
-  }
-
-body{
-    margin: 0;
 }
-header{
-    background: rgba(11, 9, 10, 0.5);
-    width: 15%;
-    height: 100vh;
-    position: fixed;
+@keyframes scale {
+  from,
+  to {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1);
+  }
+}
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(180deg);
+  }
 }
 
+body {
+  margin: 0;
+}
+header {
+  background: rgba(11, 9, 10, 0.5);
+  width: 15%;
+  height: 100vh;
+  position: fixed;
+}
 ::-webkit-scrollbar {
-    width: 5px;
-  }
-  ::-webkit-scrollbar-track {
-    background-color: var(--main);
-  }
-  ::-webkit-scrollbar-thumb {
-    background: #969696; 
-    border-radius: 10px;
-  }
-  ::-webkit-scrollbar-thumb:hover {
-    background: #666666; 
-  }
-
-.section{
-    width: 100%;
-    height: 100vh;
+  width: 5px;
 }
-.even{
-    background: var(--main);
+::-webkit-scrollbar-track {
+  background-color: var(--main);
 }
-
-.odd{
-    background: var(--sec);
+::-webkit-scrollbar-thumb {
+  background: #969696;
+  border-radius: 10px;
 }
-
-h1{
-    margin: 0;
-    padding: 15% 0 0 25%;
-    color: #fff;
-    font-size: 1000%;
-    font-family: "ccbiffbamboom", sans-serif;
-    font-weight: 400;
-    font-style: normal;
+::-webkit-scrollbar-thumb:hover {
+  background: #666666;
 }
-.fancy{
-   animation: background-pan 10s linear infinite;
-    background: linear-gradient(
-    to right,
-    var(--purple),
-    var(--red),
-    var(--purple)
-   );
-   background-size: 200%; 
-   background-clip: text;
-   -webkit-background-clip: text;
-   -webkit-text-fill-color: transparent; 
-   white-space: nowrap;
+.section {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: end;
 }
-.card-parent{
+.even {
+  background: var(--main);
+}
+.odd {
+  background: var(--sec);
+}
+.content {
+  width: 85%;
+  float: right;
+}
+h1 {
+  margin: 0;
+  padding: 15% 0 0 25%;
+  color: #fff;
+  font-size: 1000%;
+  font-family: "ccbiffbamboom", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.fancy {
+  animation: background-pan 10s linear infinite;
+  background: linear-gradient(to right,
+      var(--purple),
+      var(--red),
+      var(--purple));
+  background-size: 200%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  white-space: nowrap;
+}
+.card-parent {
   display: flex;
   justify-content: center;
   align-items: center;
-
 }
 #cards {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;  
+  gap: 8px;
   max-width: 1516px;
   width: calc(100% - 20px);
 }
-
-#cards:hover > .card::after {
+#cards:hover>.card::after {
   opacity: 1;
 }
-
 .card {
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 10px;
@@ -119,13 +113,11 @@ h1{
   height: 350px;
   flex-direction: column;
   position: relative;
-  width: 500px;  
+  width: 500px;
 }
-
 .card:hover::before {
   opacity: 1;
 }
-
 .card::before,
 .card::after {
   border-radius: inherit;
@@ -138,26 +130,19 @@ h1{
   transition: opacity 500ms;
   width: 100%;
 }
-
 .card::before {
-  background: radial-gradient(
-    800px circle at var(--mouse-x) var(--mouse-y), 
-    rgba(255, 255, 255, 0.06),
-    transparent 40%
-  );
+  background: radial-gradient(800px circle at var(--mouse-x) var(--mouse-y),
+      rgba(255, 255, 255, 0.06),
+      transparent 40%);
   z-index: 3;
 }
-
-.card::after {  
-  background: radial-gradient(
-    600px circle at var(--mouse-x) var(--mouse-y), 
-    rgba(255, 255, 255, 0.4),
-    transparent 40%
-  );
+.card::after {
+  background: radial-gradient(600px circle at var(--mouse-x) var(--mouse-y),
+      rgba(255, 255, 255, 0.4),
+      transparent 40%);
   z-index: 1;
 }
-
-.card > .card-content {
+.card>.card-content {
   background-color: var(--main);
   border-radius: inherit;
   display: flex;
@@ -168,20 +153,18 @@ h1{
   position: absolute;
   z-index: 2;
 }
-
 /* -- ↓ ↓ ↓ extra card content styles ↓ ↓ ↓ -- */
-
-h3, h4, span {
+h3,
+h4,
+span {
   color: rgb(240, 240, 240);
   font-family: "Rubik", sans-serif;
   font-weight: 400;
   margin: 0px;
 }
-
-i {  
+i {
   color: rgb(240, 240, 240);
 }
-
 .card-image {
   margin-top: 3em;
   align-items: center;
@@ -190,12 +173,10 @@ i {
   justify-content: center;
   overflow: hidden;
 }
-
-.card-image > i {
+.card-image>i {
   font-size: 7em;
   opacity: 0.25;
 }
-
 .card-info-wrapper {
   align-items: center;
   display: flex;
@@ -203,83 +184,66 @@ i {
   justify-content: flex-start;
   padding: 0px 20px;
 }
-
 .card-info {
   align-items: flex-start;
   display: flex;
   gap: 10px;
 }
-
-.card-info > i {  
+.card-info>i {
   font-size: 2em;
   height: 20px;
   line-height: 20px;
 }
-
-.card-info-title > h3 {
+.card-info-title>h3 {
   font-size: 2.1em;
   line-height: 20px;
 }
-
-.card-info-title > h4 {
+.card-info-title>h4 {
   color: rgba(255, 255, 255, 0.5);
   font-size: 1.25em;
   margin-top: 8px;
 }
-
 /* -- ↓ ↓ ↓ some responsiveness ↓ ↓ ↓ -- */
-
 @media(max-width: 1000px) {
   body {
-    align-items: flex-start;  
+    align-items: flex-start;
     overflow: auto;
   }
-  
-  #cards {    
+  #cards {
     max-width: 1000px;
     padding: 10px 0px;
   }
-  
   .card {
     flex-shrink: 1;
     width: calc(50% - 4px);
   }
 }
-
 @media(max-width: 500px) {
   .card {
     height: 180px;
   }
-  
   .card-image {
-    height: 80px;  
+    height: 80px;
   }
-  
-  .card-image > i {
+  .card-image>i {
     font-size: 3em;
   }
-    
   .card-info-wrapper {
     padding: 0px 10px;
   }
-  
-  .card-info > i { 
-    font-size: 0.8em; 
+  .card-info>i {
+    font-size: 0.8em;
   }
-  
-  .card-info-title > h3 {
+  .card-info-title>h3 {
     font-size: 0.9em;
   }
-
-  .card-info-title > h4 {
+  .card-info-title>h4 {
     font-size: 0.8em;
     margin-top: 4px;
   }
 }
-
 @media(max-width: 320px) {
   .card {
     width: 100%;
   }
 }
-
