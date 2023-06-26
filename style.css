@@ -4,7 +4,7 @@
   --red: #ff0800;
   --purple: #6e4b9a;
 }
-/*/////////////////////////////////////////*/
+/*-----------------Animation-----------------*/
 @keyframes background-pan {
   from {
     background-position: 0% center;
@@ -30,7 +30,8 @@
     transform: rotate(180deg);
   }
 }
-
+/*///////////////////////////////////////////*/
+/*-----------------Animation-----------------*/
 body {
   margin: 0;
 }
