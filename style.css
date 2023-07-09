@@ -30,8 +30,7 @@
     transform: rotate(180deg);
   }
 }
-/*///////////////////////////////////////////*/
-/*-----------------Animation-----------------*/
+/*-----------------Basic-----------------*/
 body {
   margin: 0;
 }
@@ -41,6 +40,7 @@ header {
   height: 100vh;
   position: fixed;
 }
+/*-----------------Scrollbar-----------------*/
 ::-webkit-scrollbar {
   width: 5px;
 }
@@ -54,6 +54,7 @@ header {
 ::-webkit-scrollbar-thumb:hover {
   background: #666666;
 }
+/*-----------------Extra-----------------*/
 .section {
   width: 100%;
   height: 100vh;
@@ -91,6 +92,7 @@ h1 {
   -webkit-text-fill-color: transparent;
   white-space: nowrap;
 }
+/*-----------------Cards-----------------*/
 .card-parent {
   display: flex;
   justify-content: center;
@@ -154,10 +156,8 @@ h1 {
   position: absolute;
   z-index: 2;
 }
-/* -- ↓ ↓ ↓ extra card content styles ↓ ↓ ↓ -- */
-h3,
-h4,
-span {
+/*-----------------CardsExtra-----------------*/
+h3, h4, span {
   color: rgb(240, 240, 240);
   font-family: "Rubik", sans-serif;
   font-weight: 400;
@@ -204,7 +204,7 @@ i {
   font-size: 1.25em;
   margin-top: 8px;
 }
-/* -- ↓ ↓ ↓ some responsiveness ↓ ↓ ↓ -- */
+/*-----------------Responsivity----------------*/
 @media(max-width: 1000px) {
   body {
     align-items: flex-start;
